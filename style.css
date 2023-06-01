@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 290px;
+}
+
+
+.illusion {
+    width: 200px;
+    height: 200px;
+    background: black;
+    position: relative;
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .illusion::before, .illusion::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: white;
+  }
+  
+  .illusion::before {
+    border-radius: 50%;
+    animation: scale 5s linear infinite;
+  }
+  
+  @keyframes scale {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+  
+  .illusion::after {
+    content: '';
+    border-radius: 50%;
+    animation: scale2 5s linear infinite;
+  }
+  
+  @keyframes scale2 {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
